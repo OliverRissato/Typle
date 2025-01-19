@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#container {
+    display: flex;
+    background-color: black;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+#game {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+header {
+    border-bottom: 1px solid rgb(58, 58, 60);
+}
+
+.title {
+    color: gainsboro;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.4rem 0 0.4rem 0;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#phrase-contaier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#phrase-box {
+    background: gainsboro;
+    border: gray;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.par-phrase {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;     
+    justify-content: center;   
+}
+
+.square {
+    border: 2px solid rgb(58, 58, 60);
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 50px;
+    font-weight: bold;
+    color: gainsboro;
+    text-transform: uppercase;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.input-text {
+    border: 2px solid rgb(58, 58, 60);
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 50px;
+    font-weight: bold;
+    color: gainsboro;
+    text-transform: uppercase;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#type-text {
+    height: 100%;
+    width: 100%;
+
+    font-size: 28px;
+
+    font-weight: bold;
+    color: rgb(12, 11, 11);
+    background-color: antiquewhite;
+}
+
+.untyped {
+    color:rgb(82, 78, 85);
+    font-weight: bold;
+}
