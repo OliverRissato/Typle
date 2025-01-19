@@ -59,6 +59,8 @@ header {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;     
     justify-content: center;   
+
+    text-align: center;
 }
 
 .square {
@@ -103,4 +105,35 @@ header {
 .untyped {
     color:rgb(82, 78, 85);
     font-weight: bold;
+}
+
+.typed {
+    color:rgb(255, 0, 0);
+    font-weight: bold;
+}
+
+
+#clock-contaier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#clock-box {
+    justify-content: center;
+    align-items: center;
+}
+
+#actual-time {
+    height: 100%;
+    width: 100%;
+
+    font-size: 28px;
+
+    font-weight: bold;
+    color:gainsboro;
+
+    text-align: center;
 }
