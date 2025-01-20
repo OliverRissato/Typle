@@ -43,19 +43,22 @@ document.addEventListener("DOMContentLoaded", () => {
     inputText.addEventListener("input", (event) => {
         var inputValue = event.target.value;
 
+        var streakFlag = 1;
+
         const phrase = getPhrase();
 
         for (let index = 0; index < phrase.length; index++)
         {
             var letter = document.getElementById(index+1);
 
-            if(letter.innerHTML == inputValue[index])
+            if(letter.innerHTML == inputValue[index] && streakFlag == 1)
             {
                 letter.className = "typed";
             }
             else
             {
                 letter.className = "untyped";
+                streakFlag = 0;
             }
         }
     });
