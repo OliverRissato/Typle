@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-    createPhrase();
+    // createPhrase();
 
     let actualTime = 0;
     var init_flag = 0;
     var finish_flag = 0;
+    var daily_phrase;
 
     resetStopwatch();
 
     function getPhrase() {
-        const phrase = new String("Frase do dia");
 
-        return phrase;
+        return daily_phrase;
     }
 
     function createPhrase() {
@@ -68,6 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     init_flag = 0;
                     finish_flag = 1;
                     inputText.disabled = true;
+
+                    
                 }
             }
             else
@@ -129,5 +131,47 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     });
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    function initGame() {
+        fetch('/new_game/', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                resetStopwatch();
+                daily_phrase = data.daily_phrase;
+                createPhrase();
+            } else {
+                // showMessage('Failed to start a new game. Please try again.', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Error starting new game:', error);
+            // showMessage('An error occurred. Please try again.', 'error');
+        });
+    }
+
+    initGame();
+
 })
+
 

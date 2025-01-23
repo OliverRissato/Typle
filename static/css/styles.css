@@ -1,12 +1,31 @@
-* {
-    margin: 0;
-    padding: 0;
+:root {
+    --background-color: #f0f0f0;
+    --game-background: #ffffff;
+    --text-color: #1a1a1a;
+    --tile-border-color: #d3d6da;
+    --key-background: #d3d6da;
+    --correct-color: #6aaa64;
+    --present-color: #c9b458;
+    --absent-color: #787c7e;
 }
 
-html, body {
-    height: 100%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+html {
+    overscroll-behavior-y: contain;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 0 80px 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    max-width: 100dvw;
+    font-size: 16px;
+    touch-action: manipulation;
 }
 
 #container {
@@ -61,6 +80,7 @@ header {
     justify-content: center;   
 
     text-align: center;
+    font-size: 28px;
 }
 
 .square {
@@ -99,7 +119,7 @@ header {
 
     font-weight: bold;
     color: rgb(12, 11, 11);
-    background-color: antiquewhite;
+    background-color: rgb(230, 230, 230);
 }
 
 .untyped {
@@ -108,7 +128,7 @@ header {
 }
 
 .typed {
-    color:rgb(255, 0, 0);
+    color:rgb(241, 0, 0);
     font-weight: bold;
 }
 
